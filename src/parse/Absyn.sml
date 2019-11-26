@@ -56,7 +56,7 @@ fun to_vstruct t =
     | AQ p => VAQ p
     | IDENT p  => VIDENT p
     | TYPED(l, t, pty) => VTYPED(l, to_vstruct t, pty)
-    | _ => raise ERRloc "to_vstructp" (locn_of_absyn t) "Bad variable-structure"
+    | _ => raise ERRloc "to_vstruct" (locn_of_absyn t) "Bad variable structure"
 
 fun atom_name tm = fst(dest_var tm handle HOL_ERR _ => dest_const tm);
 
